@@ -1228,7 +1228,59 @@ body {
 }
 
 /* ─── RESPONSIVE MEDIA QUERIES ─── */
+
+/* ── Tablet landscape: up to 1024px ── */
+@media (max-width: 1024px) {
+  :root {
+    --gutter: 40px;
+  }
+
+  .hero-inner,
+  .vision-inner {
+    grid-template-columns: 1fr 360px;
+    gap: 40px;
+  }
+
+  .headline-line {
+    font-size: clamp(60px, 8vw, 100px);
+  }
+
+  .manifesto-section {
+    padding: 80px 40px !important;
+  }
+
+  .manifesto-item {
+    grid-template-columns: 90px 1fr !important;
+    gap: 28px !important;
+  }
+
+  .manifesto-number {
+    font-size: 60px !important;
+  }
+
+  .manifesto-text {
+    font-size: 18px !important;
+  }
+
+  .contact-inner {
+    gap: 48px;
+  }
+}
+
+/* ── Tablet portrait: up to 992px ── */
 @media (max-width: 992px) {
+  :root {
+    --gutter: 32px;
+  }
+
+  .navbar-inner {
+    padding: 0 24px;
+    height: 64px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
 
   .hero-inner,
   .vision-inner {
@@ -1240,17 +1292,14 @@ body {
 
   .hero-right,
   .vision-right {
-    max-width: 420px;
+    max-width: 480px;
     margin: 0 auto;
     width: 100%;
   }
 
-  .navbar-inner {
-    padding: 0 24px;
-  }
-
-  .nav-links {
-    gap: 20px;
+  .hero-section {
+    min-height: auto;
+    padding-bottom: 60px;
   }
 
   .eligibility-section {
@@ -1264,16 +1313,176 @@ body {
   .eligibility-card-num {
     width: 90px;
   }
+
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .contact-left {
+    position: static;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 48px;
+    margin-bottom: 56px;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
 }
 
+/* ── Mobile: up to 768px ── */
 @media (max-width: 768px) {
+  :root {
+    --gutter: 20px;
+  }
+
+  /* Navbar: hide text links, keep logo + CTA */
   .nav-links {
     display: none;
+  }
+
+  .navbar-inner {
+    padding: 0 16px;
+    height: 60px;
+  }
+
+  .nav-logo-title {
+    font-size: 13px;
+  }
+
+  .nav-logo-hindi {
+    font-size: 8px;
+  }
+
+  .nav-cta {
+    padding: 9px 14px;
+    font-size: 11px !important;
+  }
+
+  /* Divider ticker — smaller on mobile */
+  .divider-ticker-wrapper {
+    height: 72px;
+  }
+
+  .divider-ticker-item {
+    font-size: 28px;
+  }
+
+  /* Hero */
+  .hero-inner {
+    padding: 40px 20px 48px;
+    gap: 36px;
+  }
+
+  .headline-line {
+    font-size: clamp(52px, 14vw, 80px);
+  }
+
+  .hero-description {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .btn-primary,
+  .btn-petition {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 20px;
+  }
+
+  .btn-manifesto {
+    text-align: center;
+    width: 100%;
   }
 
   .hero-stats {
     gap: 24px;
     flex-wrap: wrap;
+  }
+
+  .stat-number {
+    font-size: 36px;
+  }
+
+  .hero-watermark {
+    font-size: 60vw;
+  }
+
+  /* Vision */
+  .vision-section {
+    padding: 60px 0;
+    min-height: auto;
+  }
+
+  .vision-inner {
+    padding: 0 20px;
+    gap: 36px;
+  }
+
+  .vision-description {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  /* Manifesto */
+  .manifesto-section {
+    padding: 64px 20px !important;
+    min-height: auto !important;
+  }
+
+  .manifesto-title {
+    font-size: clamp(48px, 14vw, 80px) !important;
+  }
+
+  .manifesto-subtitle {
+    font-size: 16px !important;
+  }
+
+  .manifesto-header {
+    margin-bottom: 48px !important;
+  }
+
+  .manifesto-item {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    padding: 32px 0 !important;
+  }
+
+  .manifesto-number {
+    font-size: 48px !important;
+    line-height: 1 !important;
+  }
+
+  .manifesto-text {
+    font-size: 17px !important;
+  }
+
+  /* Eligibility */
+  .eligibility-section {
+    padding: 64px 20px;
+  }
+
+  .eligibility-title {
+    font-size: clamp(36px, 10vw, 56px);
+  }
+
+  .eligibility-subtitle {
+    font-size: 15px;
   }
 
   .eligibility-header {
@@ -1285,8 +1494,7 @@ body {
     align-items: flex-start;
     gap: 12px;
     padding: 24px;
-    padding-right: 76px;
-    /* Space for absolute checkmark */
+    padding-right: 70px;
   }
 
   .eligibility-card-num {
@@ -1298,12 +1506,168 @@ body {
     padding-right: 0;
   }
 
+  .eligibility-card-title {
+    font-size: clamp(22px, 5vw, 30px);
+  }
+
   .eligibility-checkmark-circle {
     position: absolute;
     top: 24px;
-    right: 24px;
+    right: 20px;
+  }
+
+  /* Contact section */
+  .contact-section {
+    padding: 64px 20px;
+  }
+
+  .contact-headline {
+    font-size: clamp(40px, 10vw, 60px);
+  }
+
+  .contact-info-item {
+    grid-template-columns: 100px 1fr;
+  }
+
+  .membership-form {
+    padding: 24px 16px;
+  }
+
+  .membership-form-card {
+    transform: none;
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+
+  .brutalist-radio-options {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .twitter-input-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .never-checkbox-label {
+    align-self: flex-start;
+  }
+
+  /* Success overlay */
+  .form-success-modal {
+    transform: none;
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+
+  .success-modal-body {
+    padding: 28px 20px;
+  }
+
+  .success-greeting {
+    font-size: 22px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 56px 20px 32px;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .footer-bottom-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
   }
 }
+
+/* ── Small mobile: up to 480px ── */
+@media (max-width: 480px) {
+  /* Navbar */
+  .nav-logo-text {
+    display: none;
+  }
+
+  /* Hero */
+  .hero-inner {
+    padding: 32px 16px 40px;
+  }
+
+  .headline-line {
+    font-size: clamp(44px, 16vw, 68px);
+  }
+
+  .hero-right,
+  .vision-right {
+    max-width: 100%;
+  }
+
+  .hero-stats {
+    gap: 16px;
+  }
+
+  .stat-number {
+    font-size: 32px;
+  }
+
+  /* Manifesto */
+  .manifesto-section {
+    padding: 48px 16px !important;
+  }
+
+  .manifesto-number {
+    font-size: 40px !important;
+  }
+
+  .manifesto-text {
+    font-size: 15px !important;
+  }
+
+  /* Eligibility */
+  .eligibility-section {
+    padding: 48px 16px;
+  }
+
+  .eligibility-card {
+    padding: 20px 16px;
+    padding-right: 60px;
+  }
+
+  /* Contact */
+  .contact-section {
+    padding: 48px 16px;
+  }
+
+  .form-card-header {
+    padding: 12px 16px;
+  }
+
+  .membership-form {
+    padding: 20px 14px;
+    gap: 20px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 48px 16px 28px;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 16px;
+  }
+
+  .footer-inner {
+    gap: 36px;
+    margin-bottom: 40px;
+  }
+}
+
+
 
 /* ─── BROAD IMAGE BANNER SECTION ─── */
 .broad-image-section {
