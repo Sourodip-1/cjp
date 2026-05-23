@@ -8,6 +8,9 @@ import HeroSection from './components/HeroSection';
 import VisionSection from './components/VisionSection';
 import ManifestoSection from './components/ManifestoSection';
 import EligibilitySection from './components/EligibilitySection';
+import BroadImageSection from './components/BroadImageSection';
+import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
 
 export default function Home() {
   const [scrolled, setScrolled] = useState(false);
@@ -36,7 +39,10 @@ export default function Home() {
         <VisionSection />
         <ManifestoSection />
         <EligibilitySection />
+        <BroadImageSection />
+        <ContactSection />
       </main>
+      <Footer />
     </>
   );
 }
